@@ -1,0 +1,11 @@
+@startuml
+title Grafo de fluxo de abrirConexao()
+start
+:N1 - Inicializa conexao = null;
+if (N2 - Monta URL e getConnection funciona?) then (A24: sucesso)
+else (A23: exceção)
+  :N3 - Exceção ignorada;
+endif
+:N4 - Retorna conexao;
+stop
+@enduml

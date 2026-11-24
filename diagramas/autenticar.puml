@@ -1,0 +1,15 @@
+@startuml
+title Grafo de fluxo de autenticar()
+start
+:N1 - Abre conexão e concatena usuario/senha no SQL;
+if (N2 - Operações JDBC do try concluem sem exceção?) then (A23: normal)
+  if (N3 - resultado.next()?) then (A34: sim)
+    :N4 - Atualiza ultimoUsuario e autenticado;
+  else (A36: não)
+  endif
+else (A25: exceção)
+  :N5 - Exceção ignorada;
+endif
+:N6 - Retorna autenticado;
+stop
+@enduml
